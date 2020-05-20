@@ -5,16 +5,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './global.css';
 
 // Components
-import Badge from './components/Badge';
+// import Badge from './components/Badge';
+import BadgeNew from './pages/BadgeNew';
 
 
 const container = document.getElementById('app');
-ReactDOM.render(
-<Badge
-    firstName="Megan"
-    lastName="Herrera"
-    avatarUrl = "https://i.imgur.com/q31Oq0S.jpg"
-    jobTitle="Criminology"
-    twitter="meganhrra"
-/>,
-container);
+ReactDOM.render(<BadgeNew/>, container);
