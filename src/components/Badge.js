@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Images
 import confLogo from '../images/badge-header.svg';
 
 import './styles/Badge.css';
