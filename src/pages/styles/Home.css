@@ -1,5 +1,44 @@
 .Home-background {
-    width: 100%;
+    width: 100vw;
+    height: 93.9vh;
     background: url('../../images/stars.svg'), #1C3643;
     background-repeat: repeat;
+}
+
+.Home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Home-content-conf {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    margin-top: 100px;
+}
+
+.Home-content-conf img {
+    width: 80%;
+}
+
+.Home-content-conf h2 {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin: 20px 0px 0px 0px;
+    font-weight: bolder;
+}
+
+.Home-content-conf p {
+    margin: 0px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 850px) {
+    .Home-content {
+        flex-direction: column;
+    }
 }

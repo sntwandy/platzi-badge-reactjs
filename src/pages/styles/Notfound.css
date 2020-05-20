@@ -1,0 +1,23 @@
+.Notfound-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 93.9vh;
+    background: url('../../images/stars.svg'), #1C3643;
+    background-repeat: repeat;
+    color: white;
+}
+
+.Notfound-title h1 {
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+@media screen and (max-width: 900px) {
+    .Notfound-container {
+        flex-direction: column;
+    }
+}
