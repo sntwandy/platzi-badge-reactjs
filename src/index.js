@@ -1,12 +1,8 @@
-/* const container = document.getElementById('app');
-const element = document.createElement('h1');
-
-element.innerText = 'Its working!! :)';
-
-container.appendChild(element); */
-
 import React from 'react'; // JSX
 import ReactDOM from 'react-dom'; // Render to DOM
+
+import 'bootstrap/dist/css/bootstrap.css';
+import './global.css';
 
 // Components
 import Badge from './components/Badge';
