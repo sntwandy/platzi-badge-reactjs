@@ -1,0 +1,34 @@
+.BadgesList-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 6rem;
+    background-color: white;
+    margin: 15px 0px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0 , 0.1);
+}
+
+.BadgesList-image {
+    width: 90px;
+    margin: 0px 10px;
+}
+
+.BadgesList-image img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.BadgesList-name {
+    font-weight: 800;
+    font-size: 16px;
+}
+
+.BadgeList-twitter-container span {
+    color: #29a8df;
+    font-size: 15px;
+}
+
+.BadgesList-twitter-logo {
+    width: 30px;
+}
