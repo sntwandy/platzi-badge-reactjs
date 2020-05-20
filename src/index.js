@@ -9,4 +9,12 @@ import Badge from './components/Badge';
 
 
 const container = document.getElementById('app');
-ReactDOM.render(<Badge />, container);
+ReactDOM.render(
+<Badge
+    firstName="Megan"
+    lastName="Herrera"
+    avatarUrl = "https://i.imgur.com/q31Oq0S.jpg"
+    jobTitle="Criminology"
+    twitter="meganhrra"
+/>,
+container);
