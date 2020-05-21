@@ -1,6 +1,6 @@
 .Home-background {
-    width: 100vw;
-    height: 93.9vh;
+    width: 100%;
+    height: 100vh;
     background: url('../../images/stars.svg'), #1C3643;
     background-repeat: repeat;
 }
@@ -8,7 +8,8 @@
 .Home-content {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    width: %;
 }
 
 .Home-content-conf {
@@ -18,10 +19,6 @@
     flex-direction: column;
     color: white;
     margin-top: 100px;
-}
-
-.Home-content-conf img {
-    width: 80%;
 }
 
 .Home-content-conf h2 {
