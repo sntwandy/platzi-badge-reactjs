@@ -1,4 +1,5 @@
 import React from 'react';
+import md5 from 'md5';
 
 // Components
 import Badge from '../components/Badge';
@@ -13,7 +14,6 @@ import header from '../images/platziconf-logo.svg'
 
 // API
 import API from '../api';
-import api from '../api';
 class BadgeNew extends React.Component {
 
     // Initializing the state
@@ -33,6 +33,7 @@ class BadgeNew extends React.Component {
             form: {
                 ...this.state.form,
                 [e.target.name]: e.target.value,
+                avatarUrl: `https://www.gravatar.com/avatar/${md5(this.state.form.email)}?d=identicon`,
             }
         } );
     };
