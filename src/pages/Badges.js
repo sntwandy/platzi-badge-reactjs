@@ -30,8 +30,9 @@ class Badges extends React.Component {
 
         // Call 3
         componentDidMount () {
-            console.log('3. ComponentDidMount()');
+            // console.log('3. ComponentDidMount()');
             this.fetchData();
+            this.intervalId = setInterval( () => this.fetchData(), 5000);
         }
 
         fetchData = async () => {
@@ -55,11 +56,12 @@ class Badges extends React.Component {
         componentWillUnmount () {
             console.log('6. ComponentWillUnMount');
            // clearTimeout(this.timeoutId);
+            clearInterval(this.intervalId);
         }
 
     // Call 2/4
     render() {
-        if (this.state.loading === true) {
+        if (this.state.loading === true && this.state.data === undefined) {
             return <Loading />;
         }
 
