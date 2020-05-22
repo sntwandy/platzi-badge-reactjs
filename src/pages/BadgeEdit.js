@@ -4,22 +4,22 @@ import md5 from 'md5';
 // Components
 import Badge from '../components/Badge';
 import BadgeForm from '../components/BadgeForm';
-import Error from '../components/Error';
+// import Error from '../components/Error';
 import Loading from '../components/Loading';
 
 // Styles
-import './styles/BadgeNew.css'
+import './styles/BadgeEdit.css'
 
 // Images
 import header from '../images/platziconf-logo.svg'
 
 // API
 import API from '../api';
-class BadgeNew extends React.Component {
+class BadgeEdit extends React.Component {
 
     // Initializing the state
     state = {
-        loading: false,
+        loading: true,
         error: null,
         form: {
         firstName: '',
@@ -28,6 +28,20 @@ class BadgeNew extends React.Component {
         jobTitle: '',
         twitter: '',
     } };
+
+    componentDidMount () {
+        this.fetchData();
+    }
+
+    fetchData = async e => {
+        this.setState( { loading: true, error: null } );
+        try {
+            const data = await API.badges.read(this.props.match.params.badgeId);
+            this.setState( { loading: false, form: data } );
+        } catch(error) {
+            this.setState({ loading: false, error: error });
+        }
+    }
 
     // Save the state from badge form
     handleChange = e => {
@@ -46,7 +60,7 @@ class BadgeNew extends React.Component {
         e.preventDefault();
         this.setState( { loading: true, error: null } );
         try {
-            await API.badges.create(this.state.form);
+            await API.badges.update(this.props.match.params.badgeId ,this.state.form);
             this.setState( { loading: false, error: null } );
             this.props.history.push('/Badges');
         } catch(error) {
@@ -61,7 +75,7 @@ class BadgeNew extends React.Component {
 
         return(
             <React.Fragment>
-                <div className="BadgeNew-hero">
+                <div className="BadgeEdit-hero">
                     <img className="img-fluid" src={header} alt="Logo" />
                 </div>
                 <div className="container">
@@ -77,7 +91,7 @@ class BadgeNew extends React.Component {
                             />
                         </div>
                         <div className="col-6">
-                            <h1>New Attendant</h1>
+                            <h1>Edit Attendant</h1>
                             <BadgeForm
                             onChange={this.handleChange}
                             onSubmit={this.handleSubmit}
@@ -92,4 +106,4 @@ class BadgeNew extends React.Component {
     }
 }
 
-export default BadgeNew;
+export default BadgeEdit;

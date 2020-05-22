@@ -447,16 +447,35 @@
       "email": "meganhrra@gmail.com",
       "jobTitle": "Crimonology",
       "twitter": "meganhrra",
-      "id": "WQsa3pF"
+      "avatarUrl": "https://www.gravatar.com/avatar/18c1c3b10c5aceb4a3da4c1ffccd65bf?d=identicon",
+      "id": "_iFVzqf"
     },
     {
       "firstName": "Wandy",
       "lastName": "Santana",
-      "email": "sntwandy@gmail.com",
-      "jobTitle": "System Engineer",
+      "email": "sntwandy@protonmail.com",
+      "jobTitle": "Computer System Engineer",
       "twitter": "sntwandy",
-      "avatarUrl": "https://www.gravatar.com/avatar/ce267fcc16c192c93b56bc0a141cbd09?d=identicon",
-      "id": "fxGmmVD"
+      "avatarUrl": "https://www.gravatar.com/avatar/9a019626ee4710c5e3d5b314c096092d?d=identicon",
+      "id": "kvRNhbI"
+    },
+    {
+      "firstName": "Darcy",
+      "lastName": "Bartolome",
+      "email": "darcybartolome@gmail.com",
+      "jobTitle": "Chef",
+      "twitter": "darcisito",
+      "avatarUrl": "https://www.gravatar.com/avatar/ea86d67b468c96a7a22f2e77e1241eeb?d=identicon",
+      "id": "_LLl4X1"
+    },
+    {
+      "firstName": "Zeus",
+      "lastName": "Amenadiel",
+      "email": "zeusamenadiel@gmail.com",
+      "jobTitle": "Catador",
+      "twitter": "zeuscito",
+      "avatarUrl": "https://www.gravatar.com/avatar/cfa5fe9053cc3e6f2ba1ddc9eba7f6e3?d=identicon",
+      "id": "RrGUhxg"
     }
   ]
 }
