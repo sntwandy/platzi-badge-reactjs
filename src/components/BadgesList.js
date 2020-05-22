@@ -1,38 +1,31 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // CSS
 import './styles/BadgesList.css';
 
-// Components
-import Loading from './Loading';
-
 class BadgesList extends React.Component {
     render() {
         return(
-            <React.Fragment>
             <ul className="list-unstyled">
-            {this.props.badges.results.map( badge => {
+            {this.props.badges.map( badge => {
                 return(
                     <li key={badge.id} className="BadgesList-container">
                         <div className="BadgesList-image">
-                            <img src={badge.image} alt={badge.name}/>
+                            <img src={badge.avatarUrl} alt={badge.firstName}/>
                         </div>
                         <div className="BadgesList-text-container">
-                            <span className="BadgesList-name">{badge.name}</span>
+                            <span className="BadgesList-name">{badge.firstName} {badge.lastName}</span>
                             <div className="BadgeList-twitter-container">
                                 <img className="BadgesList-twitter-logo" src="https://i.imgur.com/vd2ZIj6.png" alt="Twitter Logo"/>
-                                <span>@{badge.status}</span>
+                                <span>@{badge.twitter}</span>
                             </div>
-                            <span>{badge.species}</span>
+                            <span>{badge.jobTitle}</span>
                         </div>
                     </li>
                 );
             })}
         </ul>
-        {this.props.loading && (
-            <Loading />
-        )}
-        </React.Fragment>
         );
     }
 }

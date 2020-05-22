@@ -3,9 +3,6 @@ import React from 'react';
 // CSS
 import './styles/Loading.css';
 
-// Images
-import Gif from '../images/loading.gif';
-
 function Loading () {
     return(
         <React.Fragment>

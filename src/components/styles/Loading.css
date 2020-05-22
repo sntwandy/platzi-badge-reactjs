@@ -9,7 +9,7 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #1C3643;
+    background-color: #1B1B25;
     margin: 5px;
     animation: Jump .8s ease-in infinite;
 }
