@@ -1,0 +1,32 @@
+.Loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50%;
+}
+
+.Loading-circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #1C3643;
+    margin: 5px;
+    animation: Jump .8s ease-in infinite;
+}
+
+.Loading-circle:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+
+.Loading-circle:nth-of-type(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes Jump {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}

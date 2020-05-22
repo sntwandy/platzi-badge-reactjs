@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Config from '../Config';
 
 /// CSS
 import './styles/Home.css';
@@ -8,6 +9,7 @@ import platziConfLogo from '../images/platziconf-logo.svg';
 import astronauts from '../images/astronauts.svg';
 
 function Home () {
+    Config();
     return(
         <React.Fragment>
             <div className="Home-background">

@@ -8,9 +8,12 @@
 }
 
 body {
-  overflow: hidden;
   font-family: 'Lato', 'Helvetica Neue', sans-serif;
   background-color: #F4F4F7;
+}
+
+.overflow {
+  overflow: hidden;
 }
 
 h1 {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Config from '../Config';
 
 // Images
 import confLogo from '../images/badge-header.svg';
@@ -19,47 +20,40 @@ class Badges extends React.Component {
 
         // Initializing the state
         this.state = {
-            data: [],
+            loading: true,
+            error: null,
+            data: {
+                results: [],
+            }
             }
         }
 
         // Call 3
         componentDidMount () {
             console.log('3. ComponentDidMount()');
+            this.fetchCharacters();
+        }
 
-            this.timeoutId =  setTimeout(() => {
+        fetchCharacters = async () => {
+            this.setState( {
+                loading: true,
+                error: null,
+            } );
+
+            try {
+                const response = await fetch('https://rickandmortyapi.com/api/character/');
+                const data = await response.json();
                 this.setState( {
-                    data: [
-                        {
-                            "id": "2de30c42-9deb-40fc-a41f-05e62b5939a7",
-                            "firstName": "Freda",
-                            "lastName": "Grady",
-                            "email": "Leann_Berge@gmail.com",
-                            "jobTitle": "Legacy Brand Director",
-                            "twitter": "FredaGrady22221-7573",
-                            "avatarUrl": "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon"
-                        },
-                        {
-                            "id": "d00d3614-101a-44ca-b6c2-0be075aeed3d",
-                            "firstName": "Major",
-                            "lastName": "Rodriguez",
-                            "email": "Ilene66@hotmail.com",
-                            "jobTitle": "Human Research Architect",
-                            "twitter": "MajorRodriguez61545",
-                            "avatarUrl": "https://www.gravatar.com/avatar/d57a8be8cb9219609905da25d5f3e50a?d=identicon"
-                        },
-                        {
-                            "id": "63c03386-33a2-4512-9ac1-354ad7bec5e9",
-                            "firstName": "Daphney",
-                            "lastName": "Torphy",
-                            "email": "Ron61@hotmail.com",
-                            "jobTitle": "National Markets Officer",
-                            "twitter": "DaphneyTorphy96105",
-                            "avatarUrl": "https://www.gravatar.com/avatar/e74e87d40e55b9ff9791c78892e55cb7?d=identicon"
-                        },
-                    ]
-                } )
-            }, 3000);
+                    loading: false,
+                    data: data,
+                } );
+            } catch(error) {
+                this.setState( {
+                    loading: false,
+                    error: true,
+                } );
+            }
+
         }
 
         // Call 5
@@ -77,6 +71,10 @@ class Badges extends React.Component {
 
     // Call 2/4
     render() {
+        if (this.state.error) {
+            return `Error: ${this.state.error.message}`;
+        }
+        Config();
         console.log('2/4. Render()');
         return(
             <React.Fragment>
@@ -93,7 +91,7 @@ class Badges extends React.Component {
                     </div>
                     <div className="Badges-list">
                         <div className="Badges-container">
-                            <BadgesList badges={this.state.data} />
+                            <BadgesList badges={this.state.data} loading={this.state.loading} />
                         </div>
                     </div>
                 </div>
