@@ -61,7 +61,7 @@ class Badges extends React.Component {
 
     // Call 2/4
     render() {
-        if (this.state.loading === true && this.state.data === undefined) {
+        if (this.state.loading === true && !this.state.data) {
             return <Loading />;
         }
 

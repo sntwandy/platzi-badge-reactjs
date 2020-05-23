@@ -3,10 +3,10 @@ import React from 'react';
 // CSS
 import './styles/Error.css'
 
-function Error () {
+function Error (props) {
     return (
         <React.Fragment>
-            <h3 className="Error-title">Opps! there are an Error! :(</h3>
+            <h3 className="Error-title">`Error: ${props.error}`</h3>
         </React.Fragment>
     );
 }
