@@ -1,8 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
+
 // Components
 import Badge from '../components/Badge';
+import DeleteBadgeModal from '../components/DeleteBadgeModal';
 
 // CSS
 import './styles/BadgeDetails.css';
@@ -43,8 +44,8 @@ function BadgeDetails (props) {
                                     <Link className="btn btn-primary" to={`/badges/${props.badge.id}/edit`}>Edit</Link>
                                 </div>
                                 <div>
-                                    <button className="btn btn-danger">Delete</button>
-                                    {ReactDOM.createPortal( <h1>Hello</h1>, document.getElementById('modal') )}
+                                    <button onClick={props.onOpenModal} className="btn btn-danger">Delete</button>
+                                    <DeleteBadgeModal isOpen={props.modalIsOpen} onClose={props.onCloseModal} onDeleteBadge={props.onDeleteBadge} />
                                 </div>
                             </div>
                         </div>

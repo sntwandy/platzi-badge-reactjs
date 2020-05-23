@@ -16,6 +16,7 @@ class BadgeDetailsContainer extends React.Component {
             loading: true,
             error: null,
             data: undefined,
+            modalIsOpen: false,
         }
     }
 
@@ -33,6 +34,25 @@ class BadgeDetailsContainer extends React.Component {
         }
     }
 
+    handleOpenModal = e => {
+        this.setState( { modalIsOpen: true } );
+    }
+
+    handleCloseModal = e => {
+        this.setState( { modalIsOpen: false } );
+    }
+
+    handleDeleteBadge = async e => {
+        this.setState( { loading: true, error: null } )
+        try {
+            await API.badges.remove(this.props.match.params.badgeId);
+            this.setState( { loading: false, error: null } );
+            this.props.history.push('/badges');
+        } catch(error) {
+            this.setState( { loading: false, error: error } );
+        }
+    }
+
     render () {
 
         if (this.state.loading) {
@@ -44,7 +64,13 @@ class BadgeDetailsContainer extends React.Component {
         }
 
         return(
-            <BadgeDetails badge={this.state.data} />
+            <BadgeDetails
+            badge={this.state.data}
+            onCloseModal={this.handleCloseModal}
+            onOpenModal={this.handleOpenModal}
+            modalIsOpen={this.state.modalIsOpen}
+            onDeleteBadge={this.handleDeleteBadge}
+            />
         );
     }
 }
