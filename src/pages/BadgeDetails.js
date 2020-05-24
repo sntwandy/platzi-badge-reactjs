@@ -11,7 +11,22 @@ import './styles/BadgeDetails.css';
 // Images
 import confLogo from '../images/platziconf-logo.svg';
 
+
+// Custom hooks
+function useIncreaseCount (max) {
+    // Hooks 'useState'
+    const [count , setCount] = React.useState(0);
+
+    if (count > max) {
+        setCount(0);
+    }
+    return [count, setCount];
+}
+
 function BadgeDetails (props) {
+    // const [state, setState] = React.useState();
+    const [count, setCount] = useIncreaseCount(5);
+
     return(
         <React.Fragment>
                 <div className="BadgeDetails-hero">
@@ -41,6 +56,9 @@ function BadgeDetails (props) {
                             <h2>Actions</h2>
                             <div className="BadgeDetailsActions-buttons">
                                 <div className="BadgeDetailsActions-edit">
+                                    <button onClick={ () => {
+                                        setCount(count + 1);
+                                    } } className="mr-4 btn btn-primary">Increase count: {count}</button>
                                     <Link className="btn btn-primary" to={`/badges/${props.badge.id}/edit`}>Edit</Link>
                                 </div>
                                 <div>
